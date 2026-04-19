@@ -1,0 +1,1052 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Wall.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.2792655060378714 0.28070970963238634 -0.9182662119753253 1.4137352452224037
+  position -0.5547685111324261 2.5971759644170485 1.3532012835095832
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  translation -3.84 0 0
+  name "floor(1)"
+  size 4.965 0.825
+}
+Floor {
+  size 2.72 4.26
+}
+Robot {
+  translation 0.49 0.54 0.04
+  rotation 0 0 1 3.14159
+  children [
+    Pose {
+      translation 0.131 7.65933e-07 0.224
+      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 -2.09439
+      children [
+        Pose {
+          translation 0.0319985 0.165 -0.57
+          rotation 0.5773442691660439 -0.5773502691688411 -0.5773562691716384 2.09439
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0.666667 0
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.2
+                radius 0.01
+              }
+            }
+          ]
+        }
+        Pose {
+          translation 0.0319981 0.125 -0.57
+          rotation 0.577358935822805 0.5773459358242501 0.5773459358242501 -2.0943853071795866
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0.666667 0
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.01
+              }
+            }
+          ]
+        }
+        Pose {
+          translation 0.0319997 0 -0.635
+          rotation 0 -0.9999999999999999 0 1.5707953071795862
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0.666667 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.15 0.15 0.165
+              }
+            }
+          ]
+        }
+        Pose {
+          translation 0.0320005 0 -0.285
+          rotation 0 -0.9999999999999999 0 1.5707953071795862
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0.666667 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.15 0.15 0.165
+              }
+            }
+          ]
+        }
+        Pose {
+          translation 0.0320005 -0.07 -0.46
+          rotation 0 -1 0 1.570773498770408
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0.666667 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.2 0.01 0.375
+              }
+            }
+          ]
+        }
+        Pose {
+          translation 0.0320005 -0.015 -0.46
+          rotation 0 -1 0 1.570773498770408
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0.666667 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.2 0.1 0.1
+              }
+            }
+          ]
+        }
+      ]
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.05 0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.79 0.095 0.16
+        rotation 1 0 0 1.5708
+        children [
+          DEF WHEEL Shape {
+            appearance PBRAppearance {
+              baseColor 0.305882 0.898039 0.25098
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.075
+              radius 0.08
+              subdivision 24
+            }
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.05 -0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.79 -0.16 0.16
+        rotation 1 0 0 1.5708
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL3 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.05 0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel3"
+        }
+      ]
+      endPoint Solid {
+        translation 0.4 0.095 0.16
+        rotation 1 0 0 1.5708
+        children [
+          USE WHEEL
+        ]
+        name "solid(2)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL4 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.05 -0.06 0
+      }
+      device [
+        RotationalMotor {
+          name "wheel4"
+        }
+      ]
+      endPoint Solid {
+        translation 0.4 -0.16 0.16
+        rotation 1 0 0 1.5708
+        children [
+          USE WHEEL
+        ]
+        name "solid(3)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF DS_RIGHT DistanceSensor {
+      translation 0.841695 -0.102425 0.22
+      rotation 0 0 1 -0.3
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.184314 0.596078 0.847059
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_right"
+    }
+    DEF DS_LEFT DistanceSensor {
+      translation 0.840332 0.0391934 0.22
+      rotation 0 0 1 0.3
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.184314 0.596078 0.847059
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_left"
+    }
+  ]
+  boundingObject Pose {
+    translation 0.59 -0.032 0.274
+    children [
+      Box {
+        size 0.5 0.375 0.25
+      }
+    ]
+  }
+  physics Physics {
+    density -1
+    mass 1
+  }
+}
+Floor {
+  translation -8.885 -1.24 0
+  name "floor(2)"
+  size 5.125 6.75
+}
+Wall {
+  translation 1.38 0 0
+  size 0.1 4.26 0.5
+}
+Wall {
+  translation -6.37 -2.48 0
+  name "wall(1)"
+  size 0.1 4.4 0.5
+}
+Wall {
+  translation -8.88 2.11 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(8)"
+  size 0.1 5.13 0.5
+}
+Wall {
+  translation -8.88 -4.57 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(11)"
+  size 0.1 5.13 0.5
+}
+Wall {
+  translation -3.86 0.44 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(6)"
+  size 0.1 4.96 0.5
+}
+Wall {
+  translation -3.84 -0.379998 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(7)"
+  size 0.1 4.96 0.5
+}
+Wall {
+  translation -1.33 1.21 0
+  name "wall(4)"
+  size 0.1 1.81 0.5
+}
+Wall {
+  translation -6.37 1.25 0
+  name "wall(9)"
+  size 0.1 1.81 0.5
+}
+Wall {
+  translation -10.04 -4.1 0
+  name "wall(12)"
+  size 0.1 1 0.5
+}
+Wall {
+  translation -6.52 -0.98 0
+  rotation 0 0 1 1.5708
+  name "wall(13)"
+  size 0.1 0.2 0.5
+}
+Wall {
+  translation -7.33 -0.98 0
+  rotation 0 0 1 1.5708
+  name "wall(18)"
+  size 0.1 0.2 0.5
+}
+Wall {
+  translation -9.18 -0.690008 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  name "wall(17)"
+  size 0.1 0.5 0.5
+}
+Wall {
+  translation -10.9611 0.552778 0
+  rotation 0 0 -1 -1.047195307179586
+  name "wall(15)"
+  size 0.1 1 0.5
+}
+Wall {
+  translation -9.5926 -0.23722 0
+  rotation 0 0 -1 -1.047195307179586
+  name "wall(19)"
+  size 0.1 1 0.5
+}
+Wall {
+  translation -10.2903 -1.5304 0
+  rotation 0 0 1 -1.0472053071795866
+  name "wall(16)"
+  size 0.1 2.6 0.5
+}
+Wall {
+  translation -8.72382 -2.31227 0
+  rotation 0 0 -1 -2.356185307179586
+  name "wall(14)"
+  size 0.1 3.8 0.5
+}
+Wall {
+  translation -11.41 -1.22 0
+  name "wall(10)"
+  size 0.1 6.75 0.5
+}
+Wall {
+  translation -1.31 -1.18 0
+  name "wall(5)"
+  size 0.1 1.9 0.5
+}
+Wall {
+  translation 2.17172e-06 2.08 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(2)"
+  size 0.1 2.72 0.5
+}
+Wall {
+  translation 0.0100064 -2.08 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(3)"
+  size 0.1 2.72 0.5
+}
+Robot {
+  translation 0.46 -0.59 0.08
+  children [
+    Group {
+    }
+    DEF BODY Group {
+      children [
+        DEF LEFT Track {
+          translation -0.5 -0.2204 0.074
+          children [
+            TrackWheel {
+              children [
+                DEF TRACK_WHEEL_SHAPE Shape {
+                  appearance DEF GRAY PBRAppearance {
+                    baseColorMap ImageTexture {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_base_color.jpg"
+                      ]
+                    }
+                    roughnessMap ImageTexture {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_roughness.jpg"
+                      ]
+                    }
+                    normalMap ImageTexture {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_normal.jpg"
+                      ]
+                    }
+                  }
+                  geometry Cylinder {
+                    height 0.11
+                    radius 0.1
+                  }
+                }
+              ]
+            }
+            TrackWheel {
+              children [
+                USE TRACK_WHEEL_SHAPE
+              ]
+            }
+          ]
+          name "left track"
+          boundingObject DEF TRACK_BO Group {
+            children [
+              Pose {
+                translation -0.231 0 0
+                rotation 1 0 0 1.5708
+                children [
+                  Cylinder {
+                    height 0.11
+                    radius 0.1
+                    subdivision 20
+                  }
+                ]
+              }
+              Pose {
+                translation 0.231 0 0
+                rotation 1 0 0 1.5708
+                children [
+                  Cylinder {
+                    height 0.11
+                    radius 0.1
+                    subdivision 20
+                  }
+                ]
+              }
+              Box {
+                size 0.26 0.1 0.2
+              }
+            ]
+          }
+          physics Physics {
+          }
+          device [
+            LinearMotor {
+              name "left motor"
+            }
+          ]
+          animatedGeometry Shape {
+            appearance PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rubber/flat_rubber_base_color.jpg"
+                ]
+              }
+              roughnessMap ImageTexture {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rubber/flat_rubber_roughness.jpg"
+                ]
+              }
+              metalness 0
+              normalMap ImageTexture {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rubber/flat_rubber_normal.jpg"
+                ]
+              }
+              occlusionMap ImageTexture {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rubber/flat_rubber_occlusion.jpg"
+                ]
+              }
+            }
+            geometry Box {
+              size 0.007 0.0205 0.002
+            }
+          }
+          geometriesCount 39
+        }
+        DEF RIGHT_TRACK Track {
+          translation -0.5 0.2204 0.074
+          children [
+            TrackWheel {
+              children [
+                USE TRACK_WHEEL_SHAPE
+              ]
+            }
+            TrackWheel {
+              children [
+                USE TRACK_WHEEL_SHAPE
+              ]
+            }
+          ]
+          name "right track"
+          boundingObject USE TRACK_BO
+          physics Physics {
+          }
+          device [
+            LinearMotor {
+              name "right motor"
+            }
+          ]
+          animatedGeometry Shape {
+            appearance PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rubber/flat_rubber_base_color.jpg"
+                ]
+              }
+              roughnessMap ImageTexture {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rubber/flat_rubber_roughness.jpg"
+                ]
+              }
+              metalness 0
+              normalMap ImageTexture {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rubber/flat_rubber_normal.jpg"
+                ]
+              }
+              occlusionMap ImageTexture {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rubber/flat_rubber_occlusion.jpg"
+                ]
+              }
+            }
+            geometry Box {
+              size 0.007 0.0205 0.002
+            }
+          }
+          geometriesCount 39
+        }
+        DEF BASE Pose {
+          translation -0.5 0 0.014
+          children [
+            Pose {
+              translation 0.002 0 0.1
+              children [
+                Shape {
+                  appearance USE GRAY
+                  geometry Box {
+                    size 0.675 0.31 0.15
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation -0.229 4.83339e-05 0.059999
+              rotation -1 0 0 -1.5699953071795862
+              children [
+                DEF WHEEL_AXE Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.36
+                    radius 0.04
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0.229 4.81436e-05 0.059999
+              rotation 1 0 0 1.57
+              children [
+                USE WHEEL_AXE
+              ]
+            }
+          ]
+        }
+        DEF FRONT_SUPPORT Pose {
+          translation 0.1354 0 0.021
+          children [
+            Pose {
+              translation -0.723737 -0.129675 0.403664
+              rotation 0.866025285356651 -0.00020092806620610398 -0.5000001647508161 3.1409
+              children [
+                DEF WHEEL_AXE Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.3
+                    radius 0.02
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation -0.453585 -0.129587 0.515028
+              rotation -0.7933529147180558 0.00024441397372657427 0.6087619345607732 -3.140955307179586
+              children [
+                DEF WHEEL_AXE Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.3
+                    radius 0.02
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation -0.453585 0.130413 0.51482
+              rotation -0.7933529147180558 0.00024441397372657427 0.6087619345607732 -3.140955307179586
+              children [
+                DEF WHEEL_AXE Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.3
+                    radius 0.02
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation -0.723737 0.130325 0.403456
+              rotation 0.866025285356651 -0.00020092806620610398 -0.5000001647508161 3.1409
+              children [
+                DEF WHEEL_AXE Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.3
+                    radius 0.02
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation -0.9007 -0.129804 0.243763
+              rotation -0.9659258439903424 0.00010387098322347764 0.25881895819735307 -3.140815307179586
+              children [
+                DEF WHEEL_AXE Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.2
+                    radius 0.02
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation -0.9007 0.130196 0.243555
+              rotation -0.9659258439903424 0.00010387098322347764 0.25881895819735307 -3.140815307179586
+              children [
+                DEF WHEEL_AXE Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.2
+                    radius 0.02
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation -0.319 0.130289 0.359895
+              rotation 1 0 0 3.14079
+              children [
+                DEF WHEEL_AXE Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.4
+                    radius 0.02
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation -0.319 -0.129711 0.360103
+              rotation 1 0 0 3.14079
+              children [
+                DEF WHEEL_AXE Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.4
+                    radius 0.02
+                  }
+                }
+              ]
+            }
+          ]
+        }
+        DEF TOP_PLATE Group {
+          children [
+            Pose {
+              translation -0.79768 -0.01 0.22358
+              rotation 0 1 0 -1.047195307179586
+              children [
+                Shape {
+                  appearance USE GRAY
+                  geometry Box {
+                    size 0.1 0.25 0.001
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    DEF ANTENNA_EMITTER Emitter {
+      translation -0.208 0.017 0.2
+      children [
+        Pose {
+          translation 0 0 -0.008
+          children [
+            Shape {
+              appearance DEF BLACK PBRAppearance {
+                baseColor 0 0 0
+                roughness 0.7
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.019
+                radius 0.0006
+              }
+            }
+          ]
+        }
+        Pose {
+          children [
+            Shape {
+              appearance DEF BLACK PBRAppearance {
+                baseColor 0 0 0
+                roughness 0.7
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.007
+                radius 0.0015
+              }
+            }
+          ]
+        }
+      ]
+    }
+    DEF ANTENNA_RECEIVER Receiver {
+      translation -0.168 0.017 0.22
+    }
+    DEF CAMERA Camera {
+      translation -0.153393 0 0.141957
+      rotation 0 -1 0 0.1742
+      children [
+        Pose {
+          translation -0.0075 0 0
+          children [
+            Shape {
+              appearance DEF BLACK PBRAppearance {
+                baseColor 0 0 0
+                roughness 0.7
+                metalness 0
+              }
+              geometry Box {
+                size 0.005 0.014 0.014
+              }
+            }
+          ]
+        }
+        Pose {
+          translation -0.0025 0 0
+          rotation 0 1 0 -1.57
+          children [
+            Shape {
+              appearance DEF BLACK PBRAppearance {
+                baseColor 0 0 0
+                roughness 0.7
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.005
+                radius 0.0045
+              }
+            }
+          ]
+        }
+      ]
+      fieldOfView 0.994838
+      width 160
+      height 128
+      near 0.005
+    }
+    DEF FRONT DistanceSensor {
+      translation -0.8344 0.0168502 0.1185
+      rotation -1.9067098492472277e-12 0.00039765396855974796 0.9999999209356576 3.14159
+      children [
+        DEF RIGHT_SENSOR Group {
+          children [
+            Pose {
+              translation 0.0042 0 0
+              rotation 0 1 0 1.57
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 0 1
+                    transparency 0.1
+                    metalness 0
+                    emissiveColor 0 0 0.619608
+                  }
+                  geometry Cylinder {
+                    height 0.0085
+                    radius 0.0025
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0 -0.001 -0.0025
+              children [
+                Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.005
+                    radius 0.0002
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0 0.001 -0.0025
+              children [
+                Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.005
+                    radius 0.0002
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0 0.01 0.0025
+              children [
+                Shape {
+                  appearance DEF BLACK PBRAppearance {
+                    baseColor 0 0 0
+                    roughness 0.7
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.005 0.01 0.013
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0.0025 0.01 0.0025
+              children [
+                Shape {
+                  appearance DEF BLACK PBRAppearance {
+                    baseColor 0 0 0
+                    roughness 0.7
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.01
+                    radius 0.0025
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      name "ds0"
+      lookupTable [
+        0 154 0
+        0.1 144 0.1
+        0.15 96 0.2
+        0.2 48 0.25
+        0.3 16 0.3
+        0.4 0 0.35
+      ]
+      type "infra-red"
+      numberOfRays 4
+      aperture 0.523599
+    }
+    DEF LEFT DistanceSensor {
+      translation -0.8015 -0.1518 0.2085
+      rotation 0 0 1 -1.5707953071795862
+      children [
+        DEF LEFT_SENSOR Group {
+          children [
+            Pose {
+              translation 0.0042 0 0
+              rotation 0 1 0 -1.57
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0 0 1
+                    transparency 0.1
+                    metalness 0
+                    emissiveColor 0 0 0.619608
+                  }
+                  geometry Cylinder {
+                    height 0.0085
+                    radius 0.0025
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0 -0.001 -0.0025
+              children [
+                Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.005
+                    radius 0.0002
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0 0.001 -0.0025
+              children [
+                Shape {
+                  appearance USE GRAY
+                  geometry Cylinder {
+                    height 0.005
+                    radius 0.0002
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0 0.01 0.0025
+              children [
+                Shape {
+                  appearance DEF BLACK PBRAppearance {
+                    baseColor 0 0 0
+                    roughness 0.7
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.005 0.01 0.013
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0.0025 0.01 0.0025
+              children [
+                Shape {
+                  appearance DEF BLACK PBRAppearance {
+                    baseColor 0 0 0
+                    roughness 0.7
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.01
+                    radius 0.0025
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      name "ds1"
+      lookupTable [
+        0 154 0
+        0.1 144 0.1
+        0.15 96 0.2
+        0.2 48 0.25
+        0.3 16 0.3
+        0.4 0 0.35
+      ]
+      type "infra-red"
+      numberOfRays 4
+      aperture 0.523599
+    }
+    DEF REAR DistanceSensor {
+      translation -0.1556 -0.0031988 0.0785
+      rotation 0 0 1 -5.307179586466759e-06
+      children [
+        USE LEFT_SENSOR
+      ]
+      name "ds2"
+      lookupTable [
+        0 154 0
+        0.1 144 0.1
+        0.15 96 0.2
+        0.2 48 0.25
+        0.3 16 0.3
+        0.4 0 0.35
+      ]
+      type "infra-red"
+      numberOfRays 4
+      aperture 0.523599
+    }
+    DEF RIGHT DistanceSensor {
+      translation -0.781801 0.1514 0.1985
+      rotation 0 0 1 1.5708
+      children [
+        USE RIGHT_SENSOR
+      ]
+      name "ds3"
+      lookupTable [
+        0 154 0
+        0.1 144 0.1
+        0.15 96 0.2
+        0.2 48 0.25
+        0.3 16 0.3
+        0.4 0 0.35
+      ]
+      type "infra-red"
+      numberOfRays 4
+      aperture 0.523599
+    }
+  ]
+  name "SurveyorSrv1"
+  model "SRV-1"
+  boundingObject Group {
+    children [
+      Pose {
+        translation -0.5 0 0.31
+        children [
+          Box {
+            size 0.675 0.31 0.55
+          }
+        ]
+      }
+    ]
+  }
+  physics Physics {
+    density -1
+    mass 0.324
+    centerOfMass [
+      -0.005 0 0.028
+    ]
+    inertiaMatrix [
+      0.000267079 0.000473553 0.000418585
+      0 -6.02166e-06 0
+    ]
+  }
+}
